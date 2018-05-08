@@ -49,3 +49,34 @@ body{
   flex-wrap: wrap;
   margin-top: 50px;
 }
+
+.start-button{
+  text-align: center;
+  margin: 25, auto;
+}
+
+button{
+  background-color: black;
+  color: rgb(43, 220, 209);
+  border: 1px rgb(43, 220, 209) solid;
+  font-family: 'Raleway', sans-serif;
+  font-size: 45px;
+  font-weight: 200;
+  padding: 15px;
+
+
+}
+
+.title{
+  color: rgb(43, 220, 209);
+  font-family: 'Raleway', sans-serif;
+  font-size: 125px;
+  font-weight: 200;
+  text-align: center;
+  margin: 150px, auto;
+  padding-top: 150px;
+}
+
+input{
+  margin: 25, auto
+}

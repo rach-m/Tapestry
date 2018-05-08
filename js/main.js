@@ -3,7 +3,7 @@ const squares = document.querySelectorAll(".square");
 const board = document.querySelector(".wrapper");
 const palette = document.querySelectorAll(".palette");
 let selectedColor;
-let score;
+let score = 0;
 let timer;
 const checkBoard = [
   [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8]],
@@ -25,14 +25,50 @@ const checkBoard = [
   [[6, 3], [6, 4], [6, 5], [7, 3], [7, 4], [7, 5], [8, 3], [8, 4], [8, 5]],
   [[6, 6], [6, 7], [6, 8], [7, 6], [7, 7], [7, 8], [8, 6], [8, 7], [8, 8]]
 ];
-
+let squarePosition = [];
+let numSquarePosition;
+let split;
 
 
 // functions
+//turn data position  into array logic
 
+function getPosition() {
+  squares.forEach(element => {
+    dataPosition = element.getAttribute("data-position");
+    squarePosition.push(dataPosition);
+    return squarePosition;
+  });
+}
 
+getPosition();
+
+function positionToNumber() {
+  let x, y;
+  [x, y] = element;
+   squarePosition.forEach(element => {
+    let split = element.split(",");
+
+    return split;
+  });
+  split.forEach(element => {
+    numSquarePosition = split.map((element)=>Number(element));
+  });
+}
+
+positionToNumber();
+
+function validateBoard() {
+  checkBoard.forEach(array => {
+    array.forEach(element => {});
+  });
+}
+
+validateBoard();
 
 // events
+
+//Click event for the color palette to select the color
 
 palette.forEach(element => {
   element.addEventListener("click", function(event) {
@@ -41,9 +77,11 @@ palette.forEach(element => {
   });
 });
 
+//Click event for the board to deposit the chosen color on the board
 squares.forEach(element => {
   element.addEventListener("click", function() {
     event.target.style.background = selectedColor;
   });
 });
 
+//starter boards
