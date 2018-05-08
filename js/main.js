@@ -28,35 +28,27 @@ const checkBoard = [
 let squarePosition = [];
 let numSquarePosition;
 let split;
-
+let y;
+let x;
 
 // functions
 //turn data position  into array logic
 
 function getPosition() {
   squares.forEach(element => {
-    dataPosition = element.getAttribute("data-position");
+    dataPosition = element.getAttribute("data-position").split(",");;
     squarePosition.push(dataPosition);
-    return squarePosition;
+      for (let i = 0; i < squarePosition.length; i++) {
+        y = Number(squarePosition[i][0]);
+        x = Number(squarePosition[i][1]);
+      }
+      return console.log({ y: y, x: x });
   });
 }
 
 getPosition();
 
-function positionToNumber() {
-  let x, y;
-  [x, y] = element;
-   squarePosition.forEach(element => {
-    let split = element.split(",");
 
-    return split;
-  });
-  split.forEach(element => {
-    numSquarePosition = split.map((element)=>Number(element));
-  });
-}
-
-positionToNumber();
 
 function validateBoard() {
   checkBoard.forEach(array => {
