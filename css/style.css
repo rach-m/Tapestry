@@ -25,6 +25,15 @@ body{
   border-radius: 5px;
 }
 
+.color-picker{
+  background: gray;
+  height: 100%;
+  width: 9%;
+  margin: 1%;
+  border-radius: 5px;
+}
+
+
 /* .line{
   border-bottom: 1px solid white;
   height: 1%;
@@ -39,40 +48,4 @@ body{
   display: flex;
   flex-wrap: wrap;
   margin-top: 50px;
-}
-
-#red{
-  background: crimson
-}
-
-#orange{
-  background: coral;
-}
-
-#yellow{
-  background: gold;
-}
-
-#dark-green{
-  background: darkgreen;
-}
-
-#light-green{
-  background: rgb(105, 170, 9);
-}
-
-#dark-blue{
-  background: darkblue;
-}
-
-#light-blue{
-  background: cyan;
-}
-
-#purple{
-  background: darkviolet;
-}
-
-#pink{
-  background: deeppink;
 }
