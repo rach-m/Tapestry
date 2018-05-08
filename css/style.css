@@ -1,0 +1,12 @@
+.wrapper{
+  max-width: 60%;
+  height: 60%;
+  background-color: green;
+}
+
+.square{
+  height: 3%;
+  width: 3%;
+  color: pink;
+}
+
