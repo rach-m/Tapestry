@@ -2,7 +2,7 @@
 const squares = document.querySelectorAll(".square");
 const board = document.querySelector(".wrapper");
 const palette = document.querySelectorAll(".palette");
-const button = document.querySelector('.check-answer')
+const button = document.querySelector(".check-answer");
 let selectedColor;
 let score = 0;
 let timer;
@@ -75,7 +75,7 @@ function generateRandomBoard() {
   return answerBoard;
 }
 //reset board for user input
- function setblankBoard() {
+function setblankBoard() {
   for (let i = 0; i < squares.length; i++) {
     squares[i].style.background = "gray";
   }
@@ -88,35 +88,31 @@ function generateRandomBoard() {
 // }
 
 function compare() {
-   for (let i = 0; i < userInput.length; i++) {
-       if (userInput[i] !== answerBoard[i]) {
-         return alert('you lost!!!');
-
-    }
-    else{
+  for (let i = 0; i < userInput.length; i++) {
+    if (userInput[i] !== answerBoard[i]) {
+      return alert("you lost!!!");
+    } else {
       return nextButton();
-      }
-
-}
+    }
+  }
 }
 function nextLevel() {
-     window.location = "leveltwo.html";
-   }
+  window.location = "winner.html";
+}
 function nextButton() {
   var btn = document.createElement("BUTTON");
   var t = document.createTextNode("NEXT LEVEL");
   btn.appendChild(t);
   document.body.appendChild(btn);
-  btn.addEventListener('click', nextLevel);
+  btn.addEventListener("click", nextLevel);
 }
-function checkAnswer(){
- button.addEventListener("click", function() {
+function checkAnswer() {
+  button.addEventListener("click", function() {
     squares.forEach(element => {
       userInput.push(element.style.background);
     });
-     compare();
- });
-
+    compare();
+  });
 }
 
 generateRandomBoard();
