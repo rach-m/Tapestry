@@ -92,7 +92,7 @@ function compare() {
     if (userInput[i] !== answerBoard[i]) {
       return alert("you lost!!!");
     } else {
-      return nextButton();
+      nextButton();
     }
   }
 }
