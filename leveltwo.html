@@ -11,33 +11,48 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="level1">
-      <div class="s0 square"></div>
-      <div class="s1 square"></div>
-      <div class="s2 square"></div>
-      <div class="s3 square"></div>
-    </div>
-     <div class="level2">
-      <div class="s4 square"></div>
-      <div class="s5 square"></div>
-      <div class="s6 square"></div>
-      <div class="s7 square"></div>
-      </div>
-
-    <div class="palette">
-      <div class="color-picker" id="red" style="background: crimson"></div>
-      <div class="color-picker" id="orange" style="background: coral;"></div>
-      <div class="color-picker" id="yellow" style="background: gold;"></div>
-      <div class="color-picker" id="dark-green" style='background: darkgreen;'></div>
-      <div class="color-picker" id="light-blue" style="background: cyan;"></div>
-      <div class="color-picker" id="purple" style="background: darkviolet;"></div>
-      <div class="color-picker" id="pink" style="background: deeppink;"></div>
-    </div>
-    <button class="check-answer">CHECK ANSWER</button>
+  <header>
+    <span id="time">01:30</span>
+    <h1 class="header">TAPESTRY</h1>
+    <span id="score">Level 2</span>
+</body>
+</header>
+<div class="wrapper">
+  <div class="level1">
+    <div class="s0 square"></div>
+    <div class="s1 square"></div>
+    <div class="s2 square"></div>
+    <div class="s3 square"></div>
   </div>
+  <div class="level2 hide-level">
+    <div class="s4 square"></div>
+    <div class="s5 square"></div>
+    <div class="s6 square"></div>
+    <div class="s7 square"></div>
+  </div>
+  <!-- <div class="level3 hide-level">
+      <div class="s8 square"></div>
+      <div class="s9 square"></div>
+      <div class="s10 square"></div>
+      <div class="s11 square"></div>
+      </div> -->
+  <div class="palette">
+    <div class="color-picker" id="red" style="background: crimson"></div>
+    <div class="color-picker" id="orange" style="background: coral;"></div>
+    <div class="color-picker" id="yellow" style="background: gold;"></div>
+    <div class="color-picker" id="dark-green" style='background: darkgreen;'></div>
+    <div class="color-picker" id="light-blue" style="background: cyan;"></div>
+    <div class="color-picker" id="purple" style="background: darkviolet;"></div>
+    <div class="color-picker" id="pink" style="background: deeppink;"></div>
+  </div>
+  <button class="check-answer color-change-5x">CHECK ANSWER</button>
+  <a href="levelthree.html">
+    <button class="next-level color-change-5x hidden">NEXT LEVEL -></button>
+  </a>
 
-  <script src="js/leveltwo.js"></script>
+</div>
+<script src="js/leveltwo.js"></script>
+
 </body>
 
 </html>

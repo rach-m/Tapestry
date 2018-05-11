@@ -2,10 +2,11 @@
 const squares = document.querySelectorAll(".square");
 const board = document.querySelector(".wrapper");
 const palette = document.querySelectorAll(".palette");
-const button = document.querySelector('.check-answer')
+const button = document.querySelector('.check-answer');
+const nextLevelButton = document.querySelector('.next-level');
+const header = document.querySelector('header');
 let selectedColor;
 let score = 0;
-let timer;
 let userInput = [];
 let answerBoard = [];
 let colors = [
@@ -22,6 +23,7 @@ let colors = [
 palette.forEach(element => {
   element.addEventListener("click", function(event) {
     selectedColor = event.target.style.background;
+    header.style.background = event.target.style.background;
     console.log(selectedColor);
     event.target.classList.add(`${selectedColor}`);
   });
@@ -31,37 +33,6 @@ palette.forEach(element => {
 squares.forEach(element => {
   element.addEventListener("click", function(event) {
     event.target.style.background = selectedColor;
-    switch (selectedColor) {
-      case "crimson":
-        event.target.classList.toggle(".red");
-        break;
-      case "coral":
-        event.target.classList.toggle(".orange");
-        break;
-      case "gold":
-        event.target.classList.toggle(".yellow");
-        break;
-      case "lightgreen":
-        event.target.classList.toggle(".lightgreen");
-        break;
-      case "darkgreen":
-        event.target.classList.toggle(".darkgreen");
-        break;
-      case "cyan":
-        event.target.classList.toggle(".lightblue");
-        break;
-      case "darkblue":
-        event.target.classList.toggle(".darkblue");
-        break;
-      case "darkviolet":
-        event.target.classList.toggle(".purple");
-        break;
-      case "deeppink":
-        event.target.classList.toggle(".pink");
-        break;
-      default:
-        break;
-    }
   });
 });
 
@@ -81,33 +52,30 @@ function generateRandomBoard() {
   }
 }
 
-// function getUserInput() {
-
-//   }
-// console.log(userInput);
-// }
 
 function compare() {
    for (let i = 0; i < userInput.length; i++) {
        if (userInput[i] !== answerBoard[i]) {
          return alert('you lost!!!');
-
-    }
-    else{
-      return nextButton();
-      }
-
+  }
+  else{
+  return nextButton();
+  }
 }
+
 }
 function nextLevel() {
      window.location = "leveltwo.html";
    }
 function nextButton() {
-  var btn = document.createElement("BUTTON");
-  var t = document.createTextNode("NEXT LEVEL");
-  btn.appendChild(t);
-  document.body.appendChild(btn);
-  btn.addEventListener('click', nextLevel);
+  nextLevelButton.classList.toggle('hidden');
+  button.classList.toggle('hidden');
+  // var btn = document.createElement("BUTTON");
+  // var t = document.createTextNode("NEXT LEVEL");
+  // btn.appendChild(t);
+  // document.body.appendChild(btn);
+  // btn.addEventListener('click', nextLevel);
+
 }
 function checkAnswer(){
  button.addEventListener("click", function() {
@@ -115,11 +83,42 @@ function checkAnswer(){
       userInput.push(element.style.background);
     });
      compare();
+
  });
 
 }
 
+//sourced from https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer
+function startTimer(duration, display) {
+    let timer = duration,
+    minutes,
+    seconds;
+  setInterval(function() {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = minutes + ":" + seconds;
+
+    if (--timer < 0) {
+      timer = 0;
+    }
+  }, 1000);
+}
+
+function timerEnd() {
+    if (display.textContent === '00:00') {
+      alert("You lose! - Try Again!");
+    }
+  }
+    display = document.querySelector("#time");
+
 generateRandomBoard();
-setTimeout(setblankBoard, 5000);
+setTimeout(setblankBoard, 2000);
+setTimeout(startTimer(45, display), 1000);
+timerEnd();
+
 // getUserInput();
 checkAnswer();
