@@ -1,4 +1,4 @@
-<b>TAPESTRY<b>
+<b>TAPESTRY</b>
 
 Live Link:  https://pages.git.generalassemb.ly/rach676/tapestry/
 
