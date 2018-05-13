@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/css?family=Raleway:200,300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,300" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <title>Colorku Start</title>
 </head>
-<body>
+
+<body class="landing-page">
+  <div>
     <h1 class="title">TAPESTRY</h1>
-   <div class="start-button"><a href="index.html"><button>START</button></a></div>
-    <script src="js/main.js"></script>
+    <a href="levelone.html">
+      <button>START</button>
+    </a>
+    <span class="split">|</span>
+    <a href="#" class="instruction-button">
+      <button>INSTRUCTIONS</button>
+    </a>
+    <div class="instructions hidden slide-in-top">
+      <h2>Instructions</h2>
+      <p>1) Memorize the colors shown at the top of the screen </p>
+      <p>2) When the boxes shift to gray click on a color from the palette to select it</p>
+      <p>3) Click the box you wish to fill with that color</p>
+      <p>4) When you have finished filling in all the boxes click the check answer button</p>
+    </div>
+  </div>
+  <script>
+    const instructionButton = document.querySelector('.instruction-button');
+    const instructions = document.querySelector('.instructions');
+    instructionButton.addEventListener('click', function () {
+      instructions.classList.toggle('hidden');
+    });
+  </script>
 </body>
+
 </html>

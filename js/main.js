@@ -20,6 +20,11 @@ let colors = [
   "darkviolet",
   "deeppink"
 ];
+
+//Toggle instuctions
+
+
+
 //Click event for the color palette to select the color
 
 palette.forEach(element => {
@@ -84,7 +89,7 @@ function nextButton() {
         time.textContent = (`${countdown}`);
       }
       else if(countdown === 0){
-        checkAnswer();
+       checkAnswer();
       }
       else {
         clearInterval(interval);
