@@ -51,7 +51,7 @@ body {
   padding-top: 5%;
 }
 
-.split{
+.split {
   font-size: 45px;
   font-family: "Raleway", sans-serif;
   padding: 0 15px;
@@ -67,8 +67,8 @@ button {
   align-content: center;
 }
 
-.instructions{
-   font-size: 25px;
+.instructions {
+  font-size: 25px;
   font-family: "Raleway", sans-serif;
 }
 .title {
@@ -80,7 +80,7 @@ button {
   padding-top: 150px;
   z-index: 3;
 }
-.landing-page{
+.landing-page {
   -webkit-animation: color-change-5x 10s linear infinite alternate both;
   animation: color-change-5x 10s linear infinite alternate both;
   text-align: center;
@@ -98,7 +98,7 @@ body > header > h1 {
 header {
   display: flex;
   justify-content: center;
-align-items: center;
+  align-items: center;
   background: rgb(1, 1, 80);
   margin-top: 0;
   margin-bottom: 3%;
@@ -109,11 +109,8 @@ align-items: center;
   text-align: center;
   padding-top: 15px;
   padding-left: 5%;
-
 }
-body > div > a > button{
-  /* text-align: center; */
-  /* margin: 0 auto; */
+body > div > a > button {
   align-items: center;
   align-content: center;
 }
@@ -174,35 +171,34 @@ body > div > a > button{
 
 /*Sourced from Animista - http://animista.net/play/entrances/slide-in*/
 .slide-in-top {
-	-webkit-animation: slide-in-top 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: slide-in-top 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  -webkit-animation: slide-in-top 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: slide-in-top 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 @-webkit-keyframes slide-in-top {
   0% {
     -webkit-transform: translateY(-1000px);
-            transform: translateY(-1000px);
+    transform: translateY(-1000px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes slide-in-top {
   0% {
     -webkit-transform: translateY(-1000px);
-            transform: translateY(-1000px);
+    transform: translateY(-1000px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
-
 
 /* Sourced From: https://jsfiddle.net/hcxabsgh/ */
 
@@ -232,46 +228,79 @@ canvas {
   display: inline-block;
 }
 
-@media screen and (max-width: 768px){
-header{
-  height: 125px;
-  font-size: 15px;
-  margin-bottom: 15px;
-}
-body > header > h1{
-text-align: center;
-letter-spacing: 1px;
-}
-.wrapper{
-  height: 600px;
-  width: 100%;
+@media screen and (max-width: 768px) {
+  header {
+    height: 125px;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  body > header > h1 {
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .wrapper {
+    height: 600px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .palette {
+    height: 12%;
+  }
+
+  .title {
+  font-size: 75px;
   text-align: center;
+  margin: 100px, auto;
+  padding-top: 100px;
+}
+.instructions{
+  font-size: 15px;
 }
 
-.palette{
-  height: 12%;
+.split{
+  font-size: 45px
 }
 
-
+button{
+font-size: 35px;
+}
 }
 
-@media screen and (max-width: 400px){
-header{
-  height: 100px;
+@media screen and (max-width: 400px) {
+  header {
+    height: 100px;
+    font-size: 10px;
+    margin-bottom: 15px;
+  }
+  body > header > h1 {
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .wrapper {
+    height: 300px;
+    width: 100%;
+  }
+
+  .palette {
+    height: 10%;
+  }
+    .title {
+  font-size: 55px;
+  text-align: center;
+  margin: 100px, auto;
+  padding-top: 100px;
+}
+.instructions{
   font-size: 10px;
-  margin-bottom: 15px;
-}
-body > header > h1{
-text-align: center;
-letter-spacing: 1px;
-}
-.wrapper{
-  height: 300px;
-  width: 100%;
 }
 
-.palette{
-  height: 10%;
+.split{
+  font-size: 35px;
+  padding: 0 5px;
 }
 
+button{
+font-size: 30px;
+}
 }
