@@ -2,9 +2,11 @@
 const squares = document.querySelectorAll(".square");
 const board = document.querySelector(".wrapper");
 const palette = document.querySelectorAll(".palette");
-const button = document.querySelector('.check-answer');
-const nextLevelButton = document.querySelector('.next-level');
-const header = document.querySelector('header');
+const button = document.querySelector(".check-answer");
+const nextLevelButton = document.querySelector(".next-level");
+const header = document.querySelector("header");
+let time = document.querySelector("#time");
+let countdown = 45;
 let selectedColor;
 let score = 0;
 let userInput = [];
@@ -46,79 +48,52 @@ function generateRandomBoard() {
   return answerBoard;
 }
 //reset board for user input
- function setblankBoard() {
+function setblankBoard() {
   for (let i = 0; i < squares.length; i++) {
     squares[i].style.background = "gray";
   }
 }
-
-
-function compare() {
-   for (let i = 0; i < userInput.length; i++) {
-       if (userInput[i] !== answerBoard[i]) {
-         return alert('you lost!!!');
-  }
-  else{
-  return nextButton();
-  }
-}
-
-}
-function nextLevel() {
-     window.location = "leveltwo.html";
-   }
-function nextButton() {
-  nextLevelButton.classList.toggle('hidden');
-  button.classList.toggle('hidden');
-  // var btn = document.createElement("BUTTON");
-  // var t = document.createTextNode("NEXT LEVEL");
-  // btn.appendChild(t);
-  // document.body.appendChild(btn);
-  // btn.addEventListener('click', nextLevel);
-
-}
-function checkAnswer(){
- button.addEventListener("click", function() {
+//Checks the user input agianst the correct answer
+function checkAnswer() {
+  button.addEventListener("click", function() {
     squares.forEach(element => {
       userInput.push(element.style.background);
     });
-     compare();
-
- });
-
+    for (let i = 0; i < userInput.length; i++) {
+      if (userInput[i] !== answerBoard[i]) {
+        countdown = 0;
+        alert("you lost!!!");
+        return;
+      } else {
+        return nextButton();
+      }
+    }
+  });
 }
 
-//sourced from https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer
-function startTimer(duration, display) {
-    let timer = duration,
-    minutes,
-    seconds;
-  setInterval(function() {
-    minutes = parseInt(timer / 60, 10);
-    seconds = parseInt(timer % 60, 10);
-
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-
-    display.textContent = minutes + ":" + seconds;
-
-    if (--timer < 0) {
-      timer = 0;
-    }
-  }, 1000);
+function nextButton() {
+  nextLevelButton.classList.toggle("hidden");
+  button.classList.toggle("hidden");
 }
 
-function timerEnd() {
-    if (display.textContent === '00:00') {
-      alert("You lose! - Try Again!");
-    }
+  //sourced from https://git.generalassemb.ly/jesababon/classdash/blob/master/script.js
+  function startClock() {
+    let interval = setInterval(function timer() {
+      if (countdown !== 0) {
+        countdown--;
+        time.textContent = (`${countdown}`);
+      }
+      else if(countdown === 0){
+        checkAnswer();
+      }
+      else {
+        clearInterval(interval);
+        checkAnswer();
+      }
+    }, 1000);
   }
-    display = document.querySelector("#time");
 
 generateRandomBoard();
 setTimeout(setblankBoard, 2000);
-setTimeout(startTimer(45, display), 1000);
-timerEnd();
-
-// getUserInput();
+setTimeout(startClock(), 7000);
 checkAnswer();
