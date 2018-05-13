@@ -296,8 +296,7 @@ font-size: 35px;
 }
 
 .split{
-  font-size: 35px;
-  padding: 0 5px;
+display: none;
 }
 
 button{
