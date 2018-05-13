@@ -4,57 +4,20 @@ body {
   width: 100%;
   text-align: center;
 }
-.wrapper {
-  width: 800px;
-  height: 600px;
-  display: flex;
-  flex-wrap: wrap;
+.landing-page {
+  -webkit-animation: color-change-5x 10s linear infinite alternate both;
+  animation: color-change-5x 10s linear infinite alternate both;
   text-align: center;
   margin: 0 auto;
-  justify-content: center;
 }
-
-.level1,
-.level2,
-.level3 {
-  height: 9%;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.square {
-  /* background: gray; */
-  height: 130%;
-  width: 9%;
-  margin: 3%;
-  border-radius: 5px;
-  margin-bottom: 0px;
-  align-content: center;
-}
-
-.color-picker {
-  background: gray;
-  height: 100%;
-  width: 9%;
-  margin: 1%;
-  border-radius: 5px;
-}
-
-.palette {
-  height: 70px;
-  width: 800px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 5%;
-}
-
-.split {
-  font-size: 45px;
+.title {
   font-family: "Raleway", sans-serif;
-  padding: 0 15px;
+  font-size: 125px;
+  font-weight: 200;
+  text-align: center;
+  margin: 150px, auto;
+  padding-top: 150px;
+  z-index: 3;
 }
 button {
   height: 50px;
@@ -66,35 +29,57 @@ button {
   outline: none;
   align-content: center;
 }
-
+.split {
+  font-size: 45px;
+  font-family: "Raleway", sans-serif;
+  padding: 0 15px;
+}
 .instructions {
   font-size: 25px;
   font-family: "Raleway", sans-serif;
 }
-.title {
-  font-family: "Raleway", sans-serif;
-  font-size: 125px;
-  font-weight: 200;
-  text-align: center;
-  margin: 150px, auto;
-  padding-top: 150px;
-  z-index: 3;
-}
-.landing-page {
-  -webkit-animation: color-change-5x 10s linear infinite alternate both;
-  animation: color-change-5x 10s linear infinite alternate both;
+.wrapper {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
   margin: 0 auto;
-}
-
-body > header > h1 {
-  /* letter-spacing: 6px; */
-  /* text-align: center; */
-  padding-top: 15px;
   justify-content: center;
-  padding: 0 150px;
 }
-
+.level1,
+.level2,
+.level3 {
+  height: 9%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.square {
+  /* background: gray; */
+  height: 130%;
+  width: 9%;
+  margin: 3%;
+  border-radius: 5px;
+  margin-bottom: 0px;
+  align-content: center;
+}
+.color-picker {
+  background: gray;
+  height: 100%;
+  width: 9%;
+  margin: 1%;
+  border-radius: 5px;
+}
+.palette {
+  height: 70px;
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 5%;
+}
 header {
   display: flex;
   justify-content: center;
@@ -110,9 +95,18 @@ header {
   padding-top: 15px;
   padding-left: 5%;
 }
+body > header > h1 {
+  padding-top: 15px;
+  justify-content: center;
+  padding: 0 150px;
+}
+
 body > div > a > button {
   align-items: center;
   align-content: center;
+}
+.hidden {
+  display: none;
 }
 .color-change-5x {
   -webkit-animation: color-change-5x 8s linear infinite alternate both;
@@ -164,17 +158,11 @@ body > div > a > button {
     background: darkgreen;
   }
 }
-
-.hidden {
-  display: none;
-}
-
 /*Sourced from Animista - http://animista.net/play/entrances/slide-in*/
 .slide-in-top {
   -webkit-animation: slide-in-top 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: slide-in-top 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
-
 @-webkit-keyframes slide-in-top {
   0% {
     -webkit-transform: translateY(-1000px);
@@ -199,16 +187,13 @@ body > div > a > button {
     opacity: 1;
   }
 }
-
 /* Sourced From: https://jsfiddle.net/hcxabsgh/ */
-
 canvas {
   display: block;
   position: relative;
   z-index: 1;
   pointer-events: none;
 }
-
 #content {
   text-align: center;
   width: 500px;
@@ -223,11 +208,6 @@ canvas {
   font-size: 45px;
   font-weight: bold;
 }
-
-.buttonContainer {
-  display: inline-block;
-}
-
 @media screen and (max-width: 768px) {
   header {
     height: 125px;
@@ -243,11 +223,9 @@ canvas {
     width: 100%;
     text-align: center;
   }
-
   .palette {
     height: 12%;
   }
-
   .title {
   font-size: 75px;
   text-align: center;
@@ -257,11 +235,9 @@ canvas {
 .instructions{
   font-size: 15px;
 }
-
 .split{
   font-size: 45px
 }
-
 button{
 font-size: 35px;
 }
@@ -281,7 +257,6 @@ font-size: 35px;
     height: 300px;
     width: 100%;
   }
-
   .palette {
     height: 10%;
   }
@@ -294,11 +269,9 @@ font-size: 35px;
 .instructions{
   font-size: 10px;
 }
-
 .split{
 display: none;
 }
-
 button{
 font-size: 30px;
 }
