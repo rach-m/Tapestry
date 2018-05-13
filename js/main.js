@@ -67,7 +67,7 @@ function checkAnswer() {
     for (let i = 0; i < userInput.length; i++) {
       if (userInput[i] !== answerBoard[i]) {
         countdown = 0;
-        alert("you lost!!!");
+        alert("YOU LOST!! TRY AGAIN");
         return;
       } else {
         return nextButton();
@@ -78,7 +78,7 @@ function checkAnswer() {
 
 function nextButton() {
   nextLevelButton.classList.toggle("hidden");
-  button.classList.toggle("hidden");
+  button.classList.add("hidden");
 }
 
   //sourced from https://git.generalassemb.ly/jesababon/classdash/blob/master/script.js
@@ -88,12 +88,11 @@ function nextButton() {
         countdown--;
         time.textContent = (`${countdown}`);
       }
-      else if(countdown === 0){
-       checkAnswer();
-      }
       else {
-        clearInterval(interval);
-        checkAnswer();
+       alert('YOU LOST!! TRY AGAIN');
+       time.classList.toggle('hidden');
+       countdown = null;
+       return;
       }
     }, 1000);
   }

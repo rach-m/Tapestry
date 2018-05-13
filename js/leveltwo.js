@@ -5,6 +5,8 @@ const palette = document.querySelectorAll(".palette");
 const button = document.querySelector(".check-answer");
 const nextLevelButton = document.querySelector(".next-level");
 const header = document.querySelector("header");
+let time = document.querySelector("#time");
+let countdown = 90;
 let selectedColor;
 let score = 0;
 let userInput = [];
@@ -18,6 +20,9 @@ let colors = [
   "darkviolet",
   "deeppink"
 ];
+
+//Toggle instuctions
+
 //Click event for the color palette to select the color
 
 palette.forEach(element => {
@@ -51,68 +56,45 @@ function setblankBoard() {
     squares[i].style.background = "gray";
   }
 }
-
-function compare() {
-  for (let i = 0; i < userInput.length; i++) {
-    if (userInput[i] !== answerBoard[i]) {
-      return alert("you lost!!!");
-    } else {
-      return nextButton();
-    }
-  }
-}
-function nextLevel() {
-  window.location = "levelthree.html";
-}
-function nextButton() {
-  nextLevelButton.classList.toggle("hidden");
-  button.classList.toggle("hidden");
-  // var btn = document.createElement("BUTTON");
-  // var t = document.createTextNode("NEXT LEVEL");
-  // btn.appendChild(t);
-  // document.body.appendChild(btn);
-  // btn.addEventListener('click', nextLevel);
-}
+//Checks the user input agianst the correct answer
 function checkAnswer() {
   button.addEventListener("click", function() {
     squares.forEach(element => {
       userInput.push(element.style.background);
     });
-    compare();
+    for (let i = 0; i < userInput.length; i++) {
+      if (userInput[i] !== answerBoard[i]) {
+        countdown = 0;
+        alert("YOU LOST!! TRY AGAIN");
+        return;
+      } else {
+        return nextButton();
+      }
+    }
   });
 }
 
-//sourced from https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer
-function startTimer(duration, display) {
-  let timer = duration,
-    minutes,
-    seconds;
-  setInterval(function() {
-    minutes = parseInt(timer / 60, 10);
-    seconds = parseInt(timer % 60, 10);
+function nextButton() {
+  nextLevelButton.classList.toggle("hidden");
+  button.classList.add("hidden");
+}
 
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-
-    display.textContent = minutes + ":" + seconds;
-
-    if (--timer < 0) {
-      timer = 0;
+//sourced from https://git.generalassemb.ly/jesababon/classdash/blob/master/script.js
+function startClock() {
+  let interval = setInterval(function timer() {
+    if (countdown !== 0) {
+      countdown--;
+      time.textContent = `${countdown}`;
+    } else {
+      alert("YOU LOST!! TRY AGAIN");
+      time.classList.toggle("hidden");
+      countdown = null;
+      return;
     }
   }, 1000);
 }
 
-function timerEnd() {
-  if (display.textContent === "00:00") {
-    alert("You lose! - Try Again!");
-  }
-}
-display = document.querySelector("#time");
-
 generateRandomBoard();
 setTimeout(setblankBoard, 2000);
-setTimeout(startTimer(90, display), 1000);
-timerEnd();
-
-// getUserInput();
+setTimeout(startClock(), 7000);
 checkAnswer();
