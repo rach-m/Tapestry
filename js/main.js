@@ -6,7 +6,7 @@ const button = document.querySelector(".check-answer");
 const nextLevelButton = document.querySelector(".next-level");
 const header = document.querySelector("header");
 let time = document.querySelector("#time");
-let countdown = 5;
+let countdown = 45;
 let selectedColor;
 let score = 0;
 let userInput = [];
