@@ -6,7 +6,7 @@ const button = document.querySelector(".check-answer");
 const nextLevelButton = document.querySelector(".next-level");
 const header = document.querySelector("header");
 let time = document.querySelector("#time");
-let countdown = 45;
+let countdown = 5;
 let selectedColor;
 let score = 0;
 let userInput = [];
@@ -66,7 +66,6 @@ function checkAnswer() {
     });
     for (let i = 0; i < userInput.length; i++) {
       if (userInput[i] !== answerBoard[i]) {
-        countdown = 0;
         alert("YOU LOST!! TRY AGAIN");
         return;
       } else {
@@ -90,7 +89,7 @@ function nextButton() {
       }
       else {
        alert('YOU LOST!! TRY AGAIN');
-       time.classList.toggle('hidden');
+       time.classList.add('hidden');
        countdown = null;
        return;
       }

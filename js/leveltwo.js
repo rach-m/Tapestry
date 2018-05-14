@@ -64,7 +64,6 @@ function checkAnswer() {
     });
     for (let i = 0; i < userInput.length; i++) {
       if (userInput[i] !== answerBoard[i]) {
-        countdown = 0;
         alert("YOU LOST!! TRY AGAIN");
         return;
       } else {
@@ -73,7 +72,7 @@ function checkAnswer() {
     }
   });
 }
-
+//toggles button to next level
 function nextButton() {
   nextLevelButton.classList.toggle("hidden");
   button.classList.add("hidden");
@@ -86,9 +85,9 @@ function startClock() {
       countdown--;
       time.textContent = `${countdown}`;
     } else {
-      alert("YOU LOST!! TRY AGAIN");
+      alert('YOU LOST!! TRY AGAIN!');
+     countdown = null;
       time.classList.toggle("hidden");
-      countdown = null;
       return;
     }
   }, 1000);

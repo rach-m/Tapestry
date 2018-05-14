@@ -64,7 +64,6 @@ function checkAnswer() {
     });
     for (let i = 0; i < userInput.length; i++) {
       if (userInput[i] !== answerBoard[i]) {
-        countdown = 0;
         alert("YOU LOST!! TRY AGAIN");
         return;
       } else {
@@ -87,7 +86,7 @@ function startClock() {
       time.textContent = `${countdown}`;
     } else {
       alert("YOU LOST!! TRY AGAIN");
-      time.classList.toggle("hidden");
+      time.classList.add("hidden");
       countdown = null;
       return;
     }
