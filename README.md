@@ -13,7 +13,9 @@ I got my degree in graphic design, and colors/design have always spoke to me. I 
 
 Screenshots:
 <br>
-See Screenshot Folder
+<img src = 'Screenshots/Screen Shot 2018-05-13 at 4.10.15 PM.png'>
+<br>
+
 <br>
 <br>
 <b>Installation Instructions</b>
