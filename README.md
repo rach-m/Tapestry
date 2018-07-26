@@ -1,7 +1,6 @@
 <b>TAPESTRY</b>
 
-Live Link:  https://pages.git.generalassemb.ly/rach676/tapestry/
-
+Live Link:  https://rach-m.github.io/Tapestry/.
 Technologies:<br>
 HTML<br>
 CSS<br>
