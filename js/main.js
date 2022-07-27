@@ -28,7 +28,7 @@ let colors = [
 //Click event for the color palette to select the color
 
 palette.forEach(element => {
-  element.addEventListener("click", function(event) {
+  element.addEventListener("click", function (event) {
     selectedColor = event.target.style.background;
     header.style.background = event.target.style.background;
     console.log(selectedColor);
@@ -38,7 +38,7 @@ palette.forEach(element => {
 
 //Click event for the board to deposit the chosen color on the board
 squares.forEach(element => {
-  element.addEventListener("click", function(event) {
+  element.addEventListener("click", function (event) {
     event.target.style.background = selectedColor;
   });
 });
@@ -60,18 +60,18 @@ function setblankBoard() {
 }
 //Checks the user input agianst the correct answer
 function checkAnswer() {
-  button.addEventListener("click", function() {
+  button.addEventListener("click", function () {
     squares.forEach(element => {
       userInput.push(element.style.background);
     });
     for (let i = 0; i < userInput.length; i++) {
       if (userInput[i] !== answerBoard[i]) {
         alert("YOU LOST!! TRY AGAIN");
+        window.location.href = "/"
         return;
-      } else {
-        return nextButton();
       }
     }
+    return nextButton();
   });
 }
 
@@ -80,21 +80,24 @@ function nextButton() {
   button.classList.add("hidden");
 }
 
-  //sourced from https://git.generalassemb.ly/jesababon/classdash/blob/master/script.js
-  function startClock() {
-    let interval = setInterval(function timer() {
-      if (countdown !== 0) {
-        countdown--;
-        time.textContent = (`${countdown}`);
-      }
-      else {
-       alert('YOU LOST!! TRY AGAIN');
-       time.classList.add('hidden');
-       countdown = null;
-       return;
-      }
-    }, 1000);
-  }
+
+
+//sourced from https://git.generalassemb.ly/jesababon/classdash/blob/master/script.js
+function startClock() {
+  let interval = setInterval(function timer() {
+    if (countdown !== 0) {
+      countdown--;
+      time.textContent = (`${countdown}`);
+    }
+    else {
+      alert('YOU LOST!! TRY AGAIN');
+      time.classList.add('hidden');
+      countdown = null;
+      window.location.href = "/"
+      return;
+    }
+  }, 1000);
+}
 
 generateRandomBoard();
 setTimeout(setblankBoard, 2000);
