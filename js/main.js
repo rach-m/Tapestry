@@ -67,7 +67,7 @@ function checkAnswer() {
     for (let i = 0; i < userInput.length; i++) {
       if (userInput[i] !== answerBoard[i]) {
         alert("YOU LOST!! TRY AGAIN");
-        window.location.href = "/"
+        window.location.href = "/Tapestry/"
         return;
       }
     }
@@ -93,7 +93,7 @@ function startClock() {
       alert('YOU LOST!! TRY AGAIN');
       time.classList.add('hidden');
       countdown = null;
-      window.location.href = "/"
+      window.location.href = "/Tapestry/"
       return;
     }
   }, 1000);
